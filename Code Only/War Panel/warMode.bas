@@ -67,8 +67,6 @@ Option Explicit
 '==============================================================================
 Sub fight_enemy() 'Init procedure
 '==============================================================================
-Dim StartTime As Double
-    StartTime = Timer
 ' CONFIGURATION SECTION
 '
 ' Below is the configuration section where you can edit variables in the script.
@@ -316,7 +314,6 @@ battleResultForm.yourDamageBar.Width = 144 * (finalDamage(1) / ((1 + dmgVar) * 1
 battleResultForm.enemyDamageBar.Width = 144 * (finalDamage(2) / ((1 + dmgVar) * 1.2 * THIS_WORKSHEET.Range(DAMAGE & ENEMY_STAT_ROW).Value * ((THIS_WORKSHEET.Range(CRIT_MULTIPLIER & ENEMY_STAT_ROW).Value + 100) / 100)))
 battleResultForm.enemyDamageBar.Left = 204 + (144 - battleResultForm.enemyDamageBar.Width)
 
-MsgBox ("run time: " & Format((Timer - StartTime), "#,##0.00") & " milliseconds") 'end timer
 'Showing Result form
 battleResultForm.Show
 
